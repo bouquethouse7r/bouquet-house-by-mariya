@@ -23,31 +23,30 @@ function Products() {
   });
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-white via-pink-50 to-white overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-gradient-to-b from-white via-pink-50 to-white overflow-hidden">
 
       {/* Background Blur */}
-      <div className="absolute top-0 left-0 w-80 h-80 bg-pink-200 rounded-full blur-3xl opacity-20"></div>
+      <div className="absolute top-0 left-0 w-60 h-60 md:w-80 md:h-80 bg-pink-200 rounded-full blur-3xl opacity-20"></div>
 
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-rose-200 rounded-full blur-3xl opacity-20"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 md:w-96 md:h-96 bg-rose-200 rounded-full blur-3xl opacity-20"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Heading */}
-
         <div className="text-center">
 
-          <span className="inline-block bg-pink-100 text-pink-600 px-6 py-2 rounded-full font-semibold shadow">
+          <span className="inline-block bg-pink-100 text-pink-600 px-5 py-2 rounded-full font-semibold shadow text-sm md:text-base">
             🌸 Featured Collection
           </span>
 
-          <h2 className="text-5xl md:text-6xl font-black text-gray-800 mt-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-gray-800 mt-5 leading-tight">
             Discover Our
             <span className="text-pink-600">
               {" "}Beautiful Bouquets
             </span>
           </h2>
 
-          <p className="mt-5 text-lg text-gray-600 max-w-2xl mx-auto leading-8">
+          <p className="mt-5 text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-7">
             Handmade artificial flower bouquets crafted with love.
             Perfect for birthdays, anniversaries, weddings and every
             special occasion.
@@ -56,8 +55,7 @@ function Products() {
         </div>
 
         {/* Search */}
-
-        <div className="mt-12">
+        <div className="mt-10">
           <SearchBar
             search={search}
             setSearch={setSearch}
@@ -65,7 +63,6 @@ function Products() {
         </div>
 
         {/* Category */}
-
         <div className="mt-6">
           <CategoryFilter
             category={category}
@@ -74,10 +71,9 @@ function Products() {
         </div>
 
         {/* Top Bar */}
+        <div className="flex flex-col sm:flex-row items-center justify-between mt-10 mb-8 gap-4">
 
-        <div className="flex flex-wrap items-center justify-between mt-10 mb-10 gap-4">
-
-          <p className="text-gray-600 font-medium">
+          <p className="text-gray-600 font-medium text-sm md:text-base">
             🌸 Showing
             <span className="text-pink-600 font-bold">
               {" "}{filteredProducts.length}
@@ -87,7 +83,7 @@ function Products() {
 
           <Link
             to="/shop"
-            className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full shadow-lg duration-300"
+            className="bg-pink-600 hover:bg-pink-700 text-white px-5 py-3 rounded-full shadow-lg text-sm md:text-base duration-300"
           >
             View All Products →
           </Link>
@@ -98,13 +94,13 @@ function Products() {
 
         {filteredProducts.length === 0 ? (
 
-          <div className="bg-white rounded-3xl shadow-xl p-16 text-center">
+          <div className="bg-white rounded-3xl shadow-xl p-10 md:p-16 text-center">
 
-            <div className="text-7xl mb-6">
+            <div className="text-6xl md:text-7xl mb-6">
               🌸
             </div>
 
-            <h3 className="text-3xl font-bold text-gray-800">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
               No Bouquet Found
             </h3>
 
@@ -116,7 +112,7 @@ function Products() {
 
         ) : (
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
 
             {filteredProducts.map((product) => (
 
