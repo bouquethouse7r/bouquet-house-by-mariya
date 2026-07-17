@@ -20,7 +20,6 @@ function Categories() {
       ),
       custom: false,
     },
-
     {
       title: "Money Bouquet",
       image: moneyImg,
@@ -34,7 +33,6 @@ function Categories() {
       ),
       custom: false,
     },
-
     {
       title: "Custom Bouquet",
       image: customImg,
@@ -51,110 +49,88 @@ function Categories() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-pink-50 to-white">
-      <div className="text-center mb-14">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-pink-600">
+    <section className="py-12 md:py-20 px-4 md:px-6 bg-gradient-to-b from-pink-50 to-white">
+
+      {/* Heading */}
+      <div className="text-center mb-10 md:mb-14">
+
+        <span className="inline-block bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold shadow">
+          🌸 Our Collection
+        </span>
+
+        <h2 className="mt-4 text-2xl sm:text-3xl md:text-5xl font-extrabold text-pink-600">
           Shop By Category
         </h2>
 
-        <p className="text-gray-500 mt-4 text-lg">
-          Find the perfect bouquet for every occasion.
+        <p className="text-gray-500 mt-3 text-sm md:text-lg max-w-xl mx-auto">
+          Find the perfect bouquet for every special occasion.
         </p>
+
       </div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+      {/* Cards */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+
         {categories.map((item, index) => (
+
           <div
             key={index}
-            className="
-              group
-              bg-white
-              rounded-[30px]
-              overflow-hidden
-              shadow-xl
-              hover:shadow-pink-300/40
-              hover:-translate-y-4
-              transition-all
-              duration-500
-              border border-pink-100
-            "
+            className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-pink-300/40 hover:-translate-y-2 duration-500 border border-pink-100"
           >
+
+            {/* Image */}
+
             <div className="overflow-hidden">
+
               <img
                 src={item.image}
                 alt={item.title}
-                className="
-                  w-full
-                  h-80
-                  object-cover
-                  group-hover:scale-110
-                  transition-transform
-                  duration-700
-                "
+                className="w-full h-52 md:h-80 object-cover group-hover:scale-110 duration-700"
               />
+
             </div>
 
-            <div className="p-7 text-center">
-              <h3 className="text-3xl font-bold text-gray-800">
+            {/* Content */}
+
+            <div className="p-5 md:p-7 text-center">
+
+              <h3 className="text-xl md:text-3xl font-bold text-gray-800">
                 {item.title}
               </h3>
+
+              <p className="mt-4 text-gray-500 text-sm md:text-base leading-6 md:leading-7">
+                {item.description}
+              </p>
 
               {item.custom ? (
                 <button
                   onClick={() =>
-  window.open(
-    "https://wa.me/8801764089926?text=Hi! I%20want%20to%20customize%20my%20bouquet.",
-    "_blank"
-  )
-}
-                  className="
-                    mt-6
-                    bg-gradient-to-r
-                    from-pink-500
-                    to-rose-500
-                    hover:from-pink-600
-                    hover:to-rose-600
-                    text-white
-                    px-8
-                    py-3
-                    rounded-full
-                    font-semibold
-                    shadow-lg
-                    hover:shadow-pink-300
-                    transition-all
-                    duration-300
-                  "
+                    window.open(
+                      "https://wa.me/8801764089926?text=Hi! I want to customize my bouquet.",
+                      "_blank"
+                    )
+                  }
+                  className="mt-6 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white px-6 py-2.5 md:px-8 md:py-3 rounded-full font-semibold shadow-lg hover:scale-105 duration-300"
                 >
                   {item.button}
                 </button>
               ) : (
                 <button
                   onClick={() => navigate("/shop")}
-                  className="
-                    mt-6
-                    bg-pink-600
-                    hover:bg-pink-700
-                    text-white
-                    px-8
-                    py-3
-                    rounded-full
-                    font-semibold
-                    shadow-lg
-                    transition-all
-                    duration-300
-                  "
+                  className="mt-6 bg-pink-600 hover:bg-pink-700 text-white px-6 py-2.5 md:px-8 md:py-3 rounded-full font-semibold shadow-lg hover:scale-105 duration-300"
                 >
                   {item.button}
                 </button>
               )}
 
-              <p className="mt-6 text-gray-500 leading-7 text-sm">
-                {item.description}
-              </p>
             </div>
+
           </div>
+
         ))}
+
       </div>
+
     </section>
   );
 }
