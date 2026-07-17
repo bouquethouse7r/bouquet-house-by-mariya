@@ -1,3 +1,4 @@
+import ScrollToTop from "./components/ScrollToTop";
 import "./index.css";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -20,6 +21,7 @@ import Login from "./pages/Login";
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <LoadingScreen />
       <TopBar />
       <Navbar />
